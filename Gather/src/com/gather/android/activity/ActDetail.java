@@ -403,13 +403,6 @@ public class ActDetail extends SwipeBackActivity implements OnClickListener {
 				mApplication.isRun = true;
 				mHandler.sendEmptyMessageDelayed(0, sleepTime);
 			}
-//			imageViews = new ImageView[picList.getImgs().size()];
-//			for (int i = 0; i < picList.getImgs().size(); i++) {
-//				imageViews[i] = new ImageView(this);
-//				imageViews[i].setScaleType(ImageView.ScaleType.CENTER_CROP);
-//				imageLoader.displayImage(picList.getImgs().get(i).getImg_url(), imageViews[i], options);
-//				imageLoader.displayImage("http://c.hiphotos.baidu.com/image/pic/item/738b4710b912c8fce9a55ecafe039245d6882166.jpg", imageViews[i], options);
-//			}
 			mLinearLayout = (LinearLayout) findViewById(R.id.slide_indicator);
 			mIndicatorUnfocused = getResources().getDrawable(R.drawable.slide_indicator_unfocused);
 			mIndicatorFocused = getResources().getDrawable(R.drawable.slide_indicator_focused);
@@ -678,7 +671,13 @@ public class ActDetail extends SwipeBackActivity implements OnClickListener {
 			} else {
 				position = 100000 * size - position;
 				for (int i = size - 1; i >= 0; i--) {
-					if (i == size - position % size)
+					int index;
+					if (position%size == 0) {
+						index = size;
+					} else {
+						index = position%size;
+					}
+					if (i == size - index)
 						mImageList.get(i).setBackgroundDrawable(mIndicatorFocused);
 					else
 						mImageList.get(i).setBackgroundDrawable(mIndicatorUnfocused);
@@ -709,6 +708,7 @@ public class ActDetail extends SwipeBackActivity implements OnClickListener {
 		@Override
 		public Object instantiateItem(ViewGroup container, final int position) {
 			ImageView img = new ImageView(ActDetail.this);
+			img.setScaleType(ImageView.ScaleType.CENTER_CROP);
 			img.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
