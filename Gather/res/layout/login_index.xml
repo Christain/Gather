@@ -1,0 +1,99 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/image2" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.0dp"
+            android:layout_weight="1.0" />
+
+        <Button
+            android:id="@+id/btPhone"
+            android:background="@drawable/shape_phone_login_button"
+            android:layout_marginLeft="@dimen/login_button_margin"
+            android:layout_marginRight="@dimen/login_button_margin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_button_high"
+            android:text="手机登录"
+            android:textSize="@dimen/login_button_text_size"
+            android:textColor="#696969" />
+
+        <FrameLayout
+            android:id="@+id/flTencent"
+            android:layout_marginLeft="@dimen/login_button_margin"
+            android:layout_marginRight="@dimen/login_button_margin"
+             android:layout_marginTop="@dimen/login_button_distance"
+            android:background="@drawable/shape_login_third_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_button_high" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="@dimen/login_icon_size"
+                    android:layout_height="@dimen/login_icon_size"
+                    android:src="@drawable/icon_login_tencent" />
+
+                <TextView
+                    android:layout_marginLeft="@dimen/login_icon_margin"
+                    android:textColor="@color/font_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/login_button_text_size"
+                    android:text="QQ登录" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/flSina"
+            android:layout_marginLeft="@dimen/login_button_margin"
+            android:layout_marginRight="@dimen/login_button_margin"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/shape_login_third_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_button_high" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="@dimen/login_icon_size"
+                    android:layout_height="@dimen/login_icon_size"
+                    android:src="@drawable/icon_login_sina" />
+
+                <TextView
+                    android:layout_marginLeft="@dimen/login_icon_margin"
+                    android:textColor="@color/font_white"
+                    android:textSize="@dimen/login_button_text_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="微博登录" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_phone_edit_high"
+        android:layout_margin="@dimen/login_phone_margin"
+        android:background="@drawable/shape_login_edit"
+        android:gravity="center_vertical|left"
+        android:hint="请填写手机号"
+        android:inputType="phone"
+        android:maxLength="13"
+        android:padding="8dp"
+        android:textColorHint="#CCCCCC"
+        android:textColor="@color/login_text"
+        android:textSize="@dimen/login_phone_edit_text_size"
+        android:typeface="serif" />
+
+</LinearLayout>

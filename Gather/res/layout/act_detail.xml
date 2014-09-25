@@ -1,0 +1,518 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/font_white" >
+
+    <LinearLayout
+        android:id="@+id/llError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/ivErrorImg"
+            android:layout_width="@dimen/no_city_icon_size"
+            android:layout_height="@dimen/no_city_icon_size"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/icon_no_city" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="点击重新加载"
+            android:textColor="#FF333333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvErrorMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="我们也将陆续开放其他城市，敬请期待哟~~"
+            android:textColor="@color/login_text"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <com.gather.android.widget.ActDetailScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_app" >
+
+                <ProgressBar
+                    android:id="@+id/picProgress"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:indeterminateDrawable="@drawable/progress_bg_big"
+                    android:padding="15dp" />
+
+                <com.gather.android.widget.InfiniteLoopViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+                
+                <ImageView 
+                    android:id="@+id/ivOnePic"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"/>
+
+                <LinearLayout
+                    android:id="@+id/slide_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:background="#FFC0C0C0" />
+
+            <TextView
+                android:id="@+id/tvDetailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:minHeight="@dimen/act_detail_item_min_high"
+                android:paddingLeft="@dimen/act_detail_item_padding"
+                android:paddingRight="@dimen/act_detail_item_padding"
+                android:text="活动标题"
+                android:textColor="@color/act_yollow"
+                android:textSize="@dimen/title_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:background="#FFC0C0C0" />
+
+            <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/act_detail_item_min_high"
+                android:paddingLeft="@dimen/act_detail_item_padding"
+                android:paddingRight="@dimen/act_detail_item_padding"
+                android:text="这是一段活动简述内容"
+                android:textColor="@color/login_text"
+                android:textSize="@dimen/act_detail_content_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:background="#FFC0C0C0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/act_detail_item_min_high"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/act_detail_item_padding"
+                android:paddingRight="@dimen/act_detail_item_padding" >
+
+                <ImageView
+                    android:layout_width="@dimen/act_detail_icon_size"
+                    android:layout_height="@dimen/act_detail_icon_size"
+                    android:src="@drawable/icon_act_detail_time" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/act_detail_item_padding"
+                    android:paddingRight="@dimen/act_detail_item_padding" >
+
+                    <TextView
+                        android:id="@+id/tvAddressDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="环球中心"
+                        android:textColor="@color/login_text"
+                        android:textSize="@dimen/act_detail_content_text_size" />
+
+                    <TextView
+                        android:id="@+id/tvAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:singleLine="true"
+                        android:text="成都市，高新区，天府大道"
+                        android:textColor="@color/act_address_small"
+                        android:textSize="@dimen/act_detail_content_small_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:layout_marginLeft="@dimen/act_detail_divider_margin"
+                android:background="#FFC0C0C0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/act_detail_item_min_high"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/act_detail_item_padding"
+                android:paddingRight="@dimen/act_detail_item_padding" >
+
+                <ImageView
+                    android:layout_width="@dimen/act_detail_icon_size"
+                    android:layout_height="@dimen/act_detail_icon_size"
+                    android:src="@drawable/icon_act_detail_time" />
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/act_detail_item_padding"
+                    android:paddingRight="@dimen/act_detail_item_padding"
+                    android:maxLines="2"
+                    android:lineSpacingExtra="1dp"
+                    android:text="10月21日 9:50"
+                    android:typeface="serif"
+                    android:textColor="@color/login_text"
+                    android:textSize="@dimen/act_detail_content_text_size" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:layout_marginLeft="@dimen/act_detail_divider_margin"
+                android:background="#FFC0C0C0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/act_detail_item_min_high"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/act_detail_item_padding"
+                android:paddingRight="@dimen/act_detail_item_padding" >
+
+                <ImageView
+                    android:layout_width="@dimen/act_detail_icon_size"
+                    android:layout_height="@dimen/act_detail_icon_size"
+                    android:src="@drawable/icon_act_detail_publisher" />
+
+                <TextView
+                    android:id="@+id/tvPublisher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/act_detail_item_padding"
+                    android:paddingRight="@dimen/act_detail_item_padding"
+                    android:singleLine="true"
+                    android:text="锦江区信息科学研究所"
+                    android:textColor="@color/login_text"
+                    android:textSize="@dimen/act_detail_content_text_size" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:layout_marginLeft="@dimen/act_detail_divider_margin"
+                android:background="#FFC0C0C0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/act_detail_item_min_high"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/act_detail_item_padding"
+                android:paddingRight="@dimen/act_detail_item_padding" >
+
+                <ImageView
+                    android:layout_width="@dimen/act_detail_icon_size"
+                    android:layout_height="@dimen/act_detail_icon_size"
+                    android:src="@drawable/icon_act_detail_status" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/act_detail_item_padding"
+                    android:paddingRight="@dimen/act_detail_item_padding"
+                    android:singleLine="true"
+                    android:text="马上开始"
+                    android:textColor="@color/login_text"
+                    android:textSize="@dimen/act_detail_content_text_size" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:background="#FFC0C0C0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/act_detail_item_min_high"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/act_item_menu_padding_top"
+                android:paddingLeft="@dimen/act_item_menu_padding_left"
+                android:paddingRight="@dimen/act_item_menu_padding_left"
+                android:paddingTop="@dimen/act_item_menu_padding_top" >
+
+                <TextView
+                    android:id="@+id/tvInterestOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/font_blue"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="5dp"
+                    android:text="标签内容"
+                    android:textColor="@color/font_white"
+                    android:textSize="@dimen/act_item_interest_text_size" />
+
+                <TextView
+                    android:id="@+id/tvInterestTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/act_item_menu_padding_left"
+                    android:background="@color/font_red"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="5dp"
+                    android:text="标签内容"
+                    android:textColor="@color/font_white"
+                    android:textSize="@dimen/act_item_interest_text_size" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:background="#FFC0C0C0" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/bg_app" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:background="#FFC0C0C0" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/act_detail_item_min_high"
+                android:paddingLeft="@dimen/act_detail_item_padding"
+                android:paddingRight="@dimen/act_detail_item_padding"
+                android:text="活动详情"
+                android:textColor="@color/login_text"
+                android:textSize="@dimen/act_detail_detail_title_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:background="#FFC0C0C0" />
+
+            <TextView
+                android:id="@+id/tvDetailContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="1.0dp"
+                android:minHeight="@dimen/act_detail_item_min_high"
+                android:paddingBottom="3dp"
+                android:paddingLeft="@dimen/act_detail_item_padding"
+                android:paddingRight="@dimen/act_detail_item_padding"
+                android:paddingTop="3dp"
+                android:text="活动详情内容活动详情内容活动详情内容活动详情内容活动详情内容活动详情内容活动详情内容"
+                android:textColor="#999999"
+                android:textSize="@dimen/act_detail_detail_content_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:background="#FFC0C0C0" />
+
+            <LinearLayout
+                android:id="@+id/llCheckDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_act_detail_item_click_style"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/act_detail_item_min_high"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/act_detail_item_padding"
+                android:paddingRight="@dimen/act_detail_item_padding" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="查看图文详情"
+                    android:textColor="@color/act_yollow"
+                    android:textSize="@dimen/act_detail_check_detail_text_size" />
+
+                <View
+                    android:layout_width="0.0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1.0" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icon_act_detail_arrow_right" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:background="#FFC0C0C0" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/bg_app" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:background="#FFC0C0C0" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/act_detail_item_min_high"
+                android:paddingLeft="@dimen/act_detail_item_padding"
+                android:paddingRight="@dimen/act_detail_item_padding"
+                android:text="地点信息"
+                android:textColor="@color/login_text"
+                android:textSize="@dimen/act_detail_detail_title_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_detail_divider_high"
+                android:background="#FFC0C0C0" />
+
+            <TextView
+                android:id="@+id/tvAddressContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="1.0dp"
+                android:minHeight="@dimen/act_detail_item_min_high"
+                android:paddingBottom="3dp"
+                android:paddingLeft="@dimen/act_detail_item_padding"
+                android:paddingRight="@dimen/act_detail_item_padding"
+                android:paddingTop="3dp"
+                android:text="活动详情内容活动详情内容活动详情内容活动详情内容活动详情内容活动详情内容活动详情内容"
+                android:textColor="@color/login_text"
+                android:textSize="@dimen/act_detail_detail_content_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/act_title_height"
+                android:background="@color/bg_app" />
+        </LinearLayout>
+    </com.gather.android.widget.ActDetailScrollView>
+
+    <LinearLayout
+        android:id="@+id/llMenuBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/act_detail_divider_high"
+            android:background="#FFC0C0C0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFE3E4E4"
+            android:minHeight="@dimen/act_title_height"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/llShare"
+                android:layout_width="0.0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:background="@drawable/shape_act_detail_menu_bar_click_style"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="@dimen/act_item_share_icon_size"
+                    android:layout_height="@dimen/act_item_share_icon_size"
+                    android:src="@drawable/icon_act_share" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="告诉朋友"
+                    android:textColor="@color/login_text"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/act_detail_divider_high"
+                android:layout_height="@dimen/act_title_height"
+                android:background="#FFC0C0C0" />
+
+            <LinearLayout
+                android:id="@+id/llInterest"
+                android:layout_width="0.0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:background="@drawable/shape_act_detail_menu_bar_click_style"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/ivActInterest"
+                    android:layout_width="@dimen/act_item_share_icon_size"
+                    android:layout_height="@dimen/act_item_share_icon_size"
+                    android:src="@drawable/icon_act_interest" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="感兴趣"
+                    android:textColor="@color/login_text"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

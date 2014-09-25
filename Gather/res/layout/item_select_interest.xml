@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <TextView 
+        android:id="@+id/tvMessage"
+        android:background="#cccccc"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:text="兴趣标签"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#FFFFFFFF"/>
+    
+    <TextView 
+        android:id="@+id/tvBackground"
+        android:background="#33000000"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:text="兴趣标签"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#00000000"/>
+    
+    <ImageView 
+        android:id="@+id/image"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_launcher"/>
+</FrameLayout>

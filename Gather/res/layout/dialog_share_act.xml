@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/font_white"
+    android:gravity="bottom"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="15dp" >
+
+        <LinearLayout
+            android:id="@+id/llWeChat"
+            android:layout_width="0.0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/shape_act_detail_item_click_style"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="@dimen/share_icon_size"
+                android:layout_height="@dimen/share_icon_size"
+                android:src="@drawable/icon_share_wechat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="微信"
+                android:textColor="@color/login_text"
+                android:textSize="@dimen/share_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSquare"
+            android:layout_width="0.0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/shape_act_detail_item_click_style"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="@dimen/share_icon_size"
+                android:layout_height="@dimen/share_icon_size"
+                android:src="@drawable/icon_share_square" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="朋友圈"
+                android:textColor="@color/login_text"
+                android:textSize="@dimen/share_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llTencent"
+            android:layout_width="0.0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/shape_act_detail_item_click_style"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="@dimen/share_icon_size"
+                android:layout_height="@dimen/share_icon_size"
+                android:src="@drawable/icon_share_tencent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="QQ好友"
+                android:textColor="@color/login_text"
+                android:textSize="@dimen/share_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llZoon"
+            android:layout_width="0.0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/shape_act_detail_item_click_style"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="@dimen/share_icon_size"
+                android:layout_height="@dimen/share_icon_size"
+                android:src="@drawable/icon_share_zoon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="QQ空间"
+                android:textColor="@color/login_text"
+                android:textSize="@dimen/share_text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.0px"
+        android:background="#FFC0C0C0" />
+
+    <TextView
+        android:id="@+id/tvCancel"
+        android:background="@drawable/shape_act_detail_item_click_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="@dimen/act_detail_item_min_high"
+        android:text="取消"
+        android:textColor="@color/act_yollow"
+        android:textSize="18sp" />
+
+</LinearLayout>

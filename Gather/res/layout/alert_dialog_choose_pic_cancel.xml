@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/popup_layout"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:paddingTop="10dp"
+	android:paddingBottom="10dp">
+	<TextView
+		android:id="@+id/popup_text"
+		android:layout_width="fill_parent"
+		android:layout_height="45dp"
+		android:gravity="center"
+		android:textSize="16sp"
+		android:textStyle="normal"
+		android:textColor="@color/login_text"
+		android:background="@drawable/shape_alert_dialog_cancel_style" />
+	
+</LinearLayout>

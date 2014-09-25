@@ -1,0 +1,241 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical" >
+
+    <com.gather.android.widget.OverScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/etNickName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_high"
+                android:layout_marginLeft="@dimen/login_phone_margin"
+                android:layout_marginRight="@dimen/login_phone_margin"
+                android:layout_marginTop="@dimen/login_phone_margin"
+                android:background="@drawable/shape_login_edit"
+                android:gravity="center_vertical|left"
+                android:hint="请输入昵称!"
+                android:maxLength="9"
+                android:padding="8dp"
+                android:textColor="@color/login_text"
+                android:textColorHint="#CCCCCC"
+                android:textSize="@dimen/login_phone_edit_text_size" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_high"
+                android:layout_marginLeft="@dimen/login_phone_margin"
+                android:layout_marginRight="@dimen/login_phone_margin"
+                android:layout_marginTop="@dimen/login_phone_distance"
+                android:background="@drawable/shape_login_edit"
+                android:gravity="center_vertical|left"
+                android:hint="请输入6-8位新密码"
+                android:inputType="textPassword"
+                android:maxLength="8"
+                android:padding="8dp"
+                android:textColor="@color/login_text"
+                android:textColorHint="#CCCCCC"
+                android:textSize="@dimen/login_phone_edit_text_size"
+                android:typeface="serif" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_high"
+                android:layout_marginLeft="@dimen/login_phone_margin"
+                android:layout_marginRight="@dimen/login_phone_margin"
+                android:layout_marginTop="@dimen/login_phone_distance"
+                android:background="@drawable/shape_login_edit"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0.0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/item_male_pading"
+                    android:paddingRight="@dimen/item_male_pading" >
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/register_sex_male" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="男"
+                        android:textColor="@color/login_text"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <ImageView
+                        android:id="@+id/ivMaleBox"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/register_select_false" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1.0px"
+                    android:layout_height="match_parent"
+                    android:background="#FFCCCCCC" />
+
+                <LinearLayout
+                    android:layout_width="0.0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/item_male_pading"
+                    android:paddingRight="@dimen/item_male_pading" >
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/register_sex_female" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="女"
+                        android:textColor="@color/login_text"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <ImageView
+                        android:id="@+id/ivFemaleBox"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/register_select_false" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llBirthday"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_high"
+                android:layout_marginLeft="@dimen/login_phone_margin"
+                android:layout_marginRight="@dimen/login_phone_margin"
+                android:layout_marginTop="@dimen/login_phone_distance"
+                android:background="@drawable/shape_item_click_style"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/item_male_pading"
+                android:paddingRight="@dimen/item_male_pading" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="生日"
+                    android:textColor="@color/login_text"
+                    android:textSize="@dimen/data_text_size" />
+
+                <View
+                    android:layout_width="0.0dp"
+                    android:layout_height="1.0dp"
+                    android:layout_weight="1.0" />
+
+                <TextView
+                    android:id="@+id/tvBirthday"
+                    android:layout_width="wrap_content"
+                    android:typeface="serif"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/item_male_pading"
+                    android:textColor="@color/login_text"
+                    android:textSize="@dimen/data_text_size" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icon_arrow_black_right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/login_phone_margin"
+                android:layout_marginRight="@dimen/login_phone_margin"
+                android:layout_marginTop="@dimen/login_phone_distance"
+                android:background="@drawable/shape_item_click_style"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/item_high"
+                android:orientation="horizontal"
+                android:padding="@dimen/item_male_pading" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="地址"
+                    android:textColor="@color/login_text"
+                    android:textSize="@dimen/data_text_size" />
+
+                <EditText
+                    android:id="@+id/etAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="#00000000"
+                    android:maxLines="3"
+                    android:maxLength="25"
+                    android:textColor="@color/login_text"
+                    android:textSize="@dimen/data_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/login_phone_margin"
+                android:layout_marginRight="@dimen/login_phone_margin"
+                android:layout_marginTop="@dimen/login_phone_distance"
+                android:background="@drawable/shape_item_click_style"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/item_high"
+                android:orientation="horizontal"
+                android:padding="@dimen/item_male_pading" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="邮箱"
+                    android:textColor="@color/login_text"
+                    android:textSize="@dimen/data_text_size" />
+
+                <EditText
+                    android:id="@+id/etMail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:background="#00000000"
+                    android:gravity="right|center_vertical"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColor="@color/login_text"
+                    android:textSize="@dimen/data_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.gather.android.widget.OverScrollView>
+
+</LinearLayout>

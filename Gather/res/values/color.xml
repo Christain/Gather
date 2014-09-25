@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    <color name="red">#ffd60e0e</color>
+    <color name="bg_gray">#ffc7c4c4</color>
+    <color name="bg_black">#ff000000</color>
+    <color name="bg_white">#ffffffff</color>
+    <color name="bg_app">#ffe6eaeb</color>
+    <color name="font_white">#ffffffff</color>
+    <color name="font_black">#ff000000</color>
+    <color name="font_gray">#FF666666</color>
+    <color name="font_red">#fffb0522</color>
+    <color name="font_blue">#ff007AFF</color>
+    <color name="purple">#ffFF01D1</color>
+    <color name="black">#ff000000</color>
+    
+    <color name="login_text">#ff696969</color>
+    <color name="login_text_press">#ff000000</color>
+    <color name="title_item_cilck">#ff232323</color>
+    <color name="act_yollow">#ffe39b3a</color>
+    <color name="act_address_small">#ffcccccc</color>
+
+</resources>

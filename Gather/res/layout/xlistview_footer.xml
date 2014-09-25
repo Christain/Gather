@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/xlistview_footer_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/footer_height" >
+        
+        <ProgressBar
+            android:id="@+id/xlistview_footer_progressbar"
+            android:layout_width="@dimen/footer_height"
+            android:layout_height="@dimen/footer_height"
+            android:layout_centerInParent="true"
+            android:padding="15dp"
+            android:indeterminateDrawable="@drawable/progress_bg_big"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/xlistview_footer_hint_textview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/footer_height"
+            android:gravity="center"
+            android:textColor="@color/font_gray"
+            android:textSize="@dimen/footer_tip_text_size" />
+
+        <TextView
+            android:id="@+id/xlistview_footer_no_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="70dp"
+            android:paddingTop="70dp"
+            android:drawableTop="@drawable/no_result"
+            android:gravity="center"
+            android:drawablePadding="2dp"
+            android:textColor="@color/font_gray"
+            android:textSize="14sp"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</LinearLayout>

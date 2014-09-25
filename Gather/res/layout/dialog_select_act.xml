@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/parentPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/shape_ios7_dialog"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadingEdge="none"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvTips"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|left"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="12dp"
+                    android:text="请选择标签"
+                    android:textColor="@color/login_text"
+                    android:textSize="18sp" />
+
+                <com.custom.vg.list.CustomListView
+                    android:id="@+id/gridview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|left"
+                        android:text="请选择时间"
+                        android:textColor="@color/login_text"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|left"
+                        android:text=" (默认排序)"
+                        android:textColor="@color/login_text"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/shape_dialog_select_act_widget"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:id="@+id/rlOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@drawable/shape_dialog_select_act_item" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="即将开始"
+                            android:textColor="@color/login_text"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/ivArrowOne"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/icon_arrow_black_right" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.0px"
+                        android:background="#FFC0C0C0" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@drawable/shape_dialog_select_act_item" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="正在进行"
+                            android:textColor="@color/login_text"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/ivArrowTwo"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/icon_arrow_black_right" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.0px"
+                        android:background="#FFC0C0C0" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@drawable/shape_dialog_select_act_item" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="已结束"
+                            android:textColor="@color/login_text"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/ivArrowThree"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/icon_arrow_black_right" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.0px"
+                        android:background="#FFC0C0C0" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlFour"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@drawable/shape_dialog_select_act_item" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="正在筹备"
+                            android:textColor="@color/login_text"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/ivArrowFour"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/icon_arrow_black_right" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:layout_marginTop="3dp"
+            android:background="#FFC0C0C0" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tvCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@drawable/shape_ios7_choose_sure"
+                android:gravity="center"
+                android:padding="@dimen/dialog_sure_cancel_high"
+                android:text="取消"
+                android:textColor="@color/login_text"
+                android:textSize="@dimen/dialog_sure_cancel_text_size" />
+
+            <View
+                android:layout_width="1.0px"
+                android:layout_height="fill_parent"
+                android:background="#FFC0C0C0" />
+
+            <TextView
+                android:id="@+id/tvSure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@drawable/shape_ios7_choose_cancel"
+                android:gravity="center"
+                android:padding="@dimen/dialog_sure_cancel_high"
+                android:text="确定"
+                android:textColor="@color/login_text"
+                android:textSize="@dimen/dialog_sure_cancel_text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
