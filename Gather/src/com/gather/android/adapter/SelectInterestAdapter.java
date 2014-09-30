@@ -62,38 +62,32 @@ public class SelectInterestAdapter extends CustomAdapter {
 			holder = new ViewHolder();
 			holder.tvMessage = (TextView) convertView.findViewById(R.id.tvMessage);
 			holder.tvBackground = (TextView) convertView.findViewById(R.id.tvBackground);
-			holder.image = (ImageView) convertView.findViewById(R.id.image);
+			holder.image = (ImageView) convertView.findViewById(R.id.ivSelect);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		InterestStringModel model = getItem(position);
-		switch (position % 8) {
+		InterestStringModel model = getItem(position);	
+		switch (position % 6) {
 		case 0:
-			holder.tvMessage.setBackgroundColor(0xFFF5C22F);
+			holder.tvMessage.setBackgroundColor(0xFF86EFE8);
 			break;
 		case 1:
-			holder.tvMessage.setBackgroundColor(0xFFE69433);
+			holder.tvMessage.setBackgroundColor(0xFF83DFEE);
 			break;
 		case 2:
-			holder.tvMessage.setBackgroundColor(0xFFDC3932);
+			holder.tvMessage.setBackgroundColor(0xFFA281B5);
 			break;
 		case 3:
-			holder.tvMessage.setBackgroundColor(0xFF5997B5);
+			holder.tvMessage.setBackgroundColor(0xFFBCEB89);
 			break;
 		case 4:
-			holder.tvMessage.setBackgroundColor(0xFF88B764);
+			holder.tvMessage.setBackgroundColor(0xFFE5E591);
 			break;
 		case 5:
-			holder.tvMessage.setBackgroundColor(0xFFF59574);
+			holder.tvMessage.setBackgroundColor(0xFFFFCBBF);
 			break;
-		case 6:
-			holder.tvMessage.setBackgroundColor(0xFFAD7895);
-			break;
-		case 7:
-			holder.tvMessage.setBackgroundColor(0xFF8DABBA);
-			break;
-		}
+		}		
 		holder.tvMessage.setText(model.getName().toString());
 		holder.tvBackground.setText(model.getName());
 		if (model.isSelect()) {

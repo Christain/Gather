@@ -84,10 +84,14 @@ public class TimeUtil {
 					return dateNow.getYear() - date.getYear();
 				}
 			} else {
-				return dateNow.getYear() - date.getYear();
+				if (dateNow.getYear() == date.getYear()) {
+					return -1;
+				} else {
+					return dateNow.getYear() - date.getYear();
+				}
 			}
 		} else {
-			return 0;
+			return -1;
 		}
 	}
 

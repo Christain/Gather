@@ -10,7 +10,7 @@
     <color name="font_white">#ffffffff</color>
     <color name="font_black">#ff000000</color>
     <color name="font_gray">#FF666666</color>
-    <color name="font_red">#fffb0522</color>
+    <color name="font_red">#ffe6223b</color>
     <color name="font_blue">#ff007AFF</color>
     <color name="purple">#ffFF01D1</color>
     <color name="black">#ff000000</color>
@@ -20,5 +20,9 @@
     <color name="title_item_cilck">#ff232323</color>
     <color name="act_yollow">#ffe39b3a</color>
     <color name="act_address_small">#ffcccccc</color>
+    
+     <color name="result_view">#b0000000</color>
+     <color name="viewfinder_mask">#90000000</color>
+     <color name="possible_result_points">#c0ffff00</color> 
 
 </resources>

@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/login_phone_margin"
+        android:layout_marginRight="@dimen/login_phone_margin"
+        android:layout_marginTop="@dimen/login_phone_margin" >
+
+        <EditText
+            android:id="@+id/etContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/login_phone_edit_high"
+            android:background="@drawable/bg_recommend_edit_has_focus"
+            android:gravity="center_vertical|left"
+            android:hint="请填写手机号"
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingRight="38dp"
+            android:lineSpacingExtra="1.5dp"
+            android:textColor="@color/login_text"
+            android:textColorHint="#CCCCCC"
+            android:textSize="@dimen/login_phone_edit_text_size"
+            android:typeface="serif" />
+
+        <ImageView
+            android:id="@+id/ivClear"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical|right"
+            android:padding="10dp"
+            android:src="@drawable/icon_edit_data_clear" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvTips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/login_phone_margin"
+        android:layout_marginRight="@dimen/login_phone_margin"
+        android:layout_marginTop="5dp"
+        android:text="请认真填写"
+        android:textColor="#999999"
+        android:textSize="12sp" />
+
+</LinearLayout>

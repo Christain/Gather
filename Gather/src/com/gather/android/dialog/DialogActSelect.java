@@ -27,8 +27,8 @@ public class DialogActSelect extends Dialog implements android.view.View.OnClick
 	private View mDialogView;
 	private TextView tvTips, tvCancel, tvSure;
 	private CustomListView gridview;
-	private RelativeLayout rlOne, rlTwo, rlThree, rlFour;
-	private ImageView ivOne, ivTwo, ivThree, ivFour;
+	private RelativeLayout rlOne, rlTwo, rlThree, rlFour, rlDefault;
+	private ImageView ivOne, ivTwo, ivThree, ivFour, ivDefault;
 	private int TimeType = 0;
 	private SelectInterestAdapter adapter;
 	private LinearLayout mLinearLayoutView;
@@ -126,6 +126,8 @@ public class DialogActSelect extends Dialog implements android.view.View.OnClick
 		this.rlTwo = (RelativeLayout) mDialogView.findViewById(R.id.rlTwo);
 		this.rlThree = (RelativeLayout) mDialogView.findViewById(R.id.rlThree);
 		this.rlFour = (RelativeLayout) mDialogView.findViewById(R.id.rlFour);
+		this.rlDefault = (RelativeLayout) mDialogView.findViewById(R.id.rlDefault);
+		this.ivDefault = (ImageView) mDialogView.findViewById(R.id.ivArrowDefault);
 		this.ivOne = (ImageView) mDialogView.findViewById(R.id.ivArrowOne);
 		this.ivTwo = (ImageView) mDialogView.findViewById(R.id.ivArrowTwo);
 		this.ivThree = (ImageView) mDialogView.findViewById(R.id.ivArrowThree);
@@ -135,6 +137,7 @@ public class DialogActSelect extends Dialog implements android.view.View.OnClick
 		this.rlTwo.setOnClickListener(this);
 		this.rlThree.setOnClickListener(this);
 		this.rlFour.setOnClickListener(this);
+		this.rlDefault.setOnClickListener(this);
 
 		setContentView(mDialogView);
 		this.setCanceledOnTouchOutside(true);
@@ -182,30 +185,35 @@ public class DialogActSelect extends Dialog implements android.view.View.OnClick
 	private void initView() {
 		switch (TimeType) {
 		case 0:
+			rlDefaultSelect(true);
 			rlOneSelect(false);
 			rlTwoSelect(false);
 			rlThreeSelect(false);
 			rlFourSelect(false);
 			break;
 		case 1:
+			rlDefaultSelect(false);
 			rlOneSelect(true);
 			rlTwoSelect(false);
 			rlThreeSelect(false);
 			rlFourSelect(false);
 			break;
 		case 2:
+			rlDefaultSelect(false);
 			rlOneSelect(false);
 			rlTwoSelect(true);
 			rlThreeSelect(false);
 			rlFourSelect(false);
 			break;
 		case 3:
+			rlDefaultSelect(false);
 			rlOneSelect(false);
 			rlTwoSelect(false);
 			rlThreeSelect(true);
 			rlFourSelect(false);
 			break;
 		case 4:
+			rlDefaultSelect(false);
 			rlOneSelect(false);
 			rlTwoSelect(false);
 			rlThreeSelect(false);
@@ -217,9 +225,20 @@ public class DialogActSelect extends Dialog implements android.view.View.OnClick
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+		case R.id.rlDefault:
+			if (TimeType != 0) {
+				TimeType = 0;
+				rlDefaultSelect(true);
+				rlOneSelect(false);
+				rlTwoSelect(false);
+				rlThreeSelect(false);
+				rlFourSelect(false);
+			}
+			break;
 		case R.id.rlOne:
 			if (TimeType != 1) {
 				TimeType = 1;
+				rlDefaultSelect(false);
 				rlOneSelect(true);
 				rlTwoSelect(false);
 				rlThreeSelect(false);
@@ -229,6 +248,7 @@ public class DialogActSelect extends Dialog implements android.view.View.OnClick
 		case R.id.rlTwo:
 			if (TimeType != 2) {
 				TimeType = 2;
+				rlDefaultSelect(false);
 				rlOneSelect(false);
 				rlTwoSelect(true);
 				rlThreeSelect(false);
@@ -238,6 +258,7 @@ public class DialogActSelect extends Dialog implements android.view.View.OnClick
 		case R.id.rlThree:
 			if (TimeType != 3) {
 				TimeType = 3;
+				rlDefaultSelect(false);
 				rlOneSelect(false);
 				rlTwoSelect(false);
 				rlThreeSelect(true);
@@ -247,6 +268,7 @@ public class DialogActSelect extends Dialog implements android.view.View.OnClick
 		case R.id.rlFour:
 			if (TimeType != 4) {
 				TimeType = 4;
+				rlDefaultSelect(false);
 				rlOneSelect(false);
 				rlTwoSelect(false);
 				rlThreeSelect(false);
@@ -310,6 +332,16 @@ public class DialogActSelect extends Dialog implements android.view.View.OnClick
 
 	public void setActivityListener(OnActivityClickListener listener) {
 		this.listener = listener;
+	}
+	
+	private void rlDefaultSelect(boolean select){
+		if (select) {
+			rlDefault.setSelected(true);
+			ivDefault.setVisibility(View.VISIBLE);
+		} else {
+			rlDefault.setSelected(false);
+			ivDefault.setVisibility(View.GONE);
+		}
 	}
 	
 	private void rlOneSelect(boolean select){

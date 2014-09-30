@@ -1,0 +1,137 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/signin_item_margin_left_right"
+        android:layout_marginRight="@dimen/signin_item_margin_left_right"
+        android:layout_marginTop="@dimen/signin_item_margin_top"
+        android:background="@drawable/shape_setting_item_widget"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/signin_item_title_high"
+            android:background="@drawable/shape_signin_title_bg"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/signin_item_title_margin_left"
+            android:paddingRight="@dimen/signin_item_title_margin_left"
+            android:singleLine="true"
+            android:text="活动标题"
+            android:textColor="#FF333333"
+            android:textSize="@dimen/signin_item_title_text_size" />
+
+        <LinearLayout
+            android:id="@+id/llItemAll"
+            android:background="@drawable/shape_setting_item_click_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/signin_item_content_padding" >
+
+            <LinearLayout
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1.0"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="@dimen/signin_item_icon_size"
+                        android:layout_height="@dimen/signin_item_icon_size"
+                        android:src="@drawable/icon_signin_time" />
+
+                    <TextView
+                        android:id="@+id/tvActTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:singleLine="true"
+                        android:text="10月20日"
+                        android:textColor="@color/login_text"
+                        android:textSize="@dimen/signin_item_content_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/signin_item_content_padding"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="@dimen/signin_item_icon_size"
+                        android:layout_height="@dimen/signin_item_icon_size"
+                        android:src="@drawable/icon_signin_location" />
+
+                    <TextView
+                        android:id="@+id/tvActLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:singleLine="true"
+                        android:text="成都"
+                        android:textColor="@color/login_text"
+                        android:textSize="@dimen/signin_item_content_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/signin_item_content_padding"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="@dimen/signin_item_icon_size"
+                        android:layout_height="@dimen/signin_item_icon_size"
+                        android:src="@drawable/icon_signin_type" />
+
+                    <TextView
+                        android:id="@+id/tvActType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:singleLine="true"
+                        android:text="音乐"
+                        android:textColor="@color/login_text"
+                        android:textSize="@dimen/signin_item_content_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llMark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="@dimen/signin_item_mark_icon_size"
+                    android:layout_height="@dimen/signin_item_mark_icon_size"
+                    android:src="@drawable/icon_signin_mark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="已签到"
+                    android:textColor="@color/act_yollow"
+                    android:textSize="@dimen/signin_item_mark_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

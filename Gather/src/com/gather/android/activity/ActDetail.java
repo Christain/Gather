@@ -76,7 +76,6 @@ public class ActDetail extends SwipeBackActivity implements OnClickListener {
 	private GatherApplication mApplication;
 	private Handler mHandler;
 	private int sleepTime = 4000;
-//	private ImageView[] imageViews;
 	private DisplayImageOptions options;
 
 	/*********** 活动详情控件 *********************/
@@ -461,9 +460,6 @@ public class ActDetail extends SwipeBackActivity implements OnClickListener {
 				isRequest = true;
 				switch (model.getIs_loved()) {
 				case -1:
-					isRequest = false;
-					dialog.setMessage("不能再添加").withEffect(Effectstype.SlideBottom).show();
-					break;
 				case 0:
 					AddInterestAct();
 					break;
@@ -575,7 +571,7 @@ public class ActDetail extends SwipeBackActivity implements OnClickListener {
 					isRequest = false;
 					mLoadingDialog.dismiss();
 				}
-				model.setIs_loved(-1);
+				model.setIs_loved(0);
 				ivActInterest.setImageResource(R.drawable.icon_act_interest);
 			}
 

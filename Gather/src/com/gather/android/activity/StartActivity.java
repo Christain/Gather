@@ -65,8 +65,8 @@ public class StartActivity extends Activity implements Runnable{
 		}
 
 		// 登录判断
-		String sid = AppPreference.getUserPersistent(this, AppPreference.USER_ID);
-		needLogin = (sid == null || sid.equals(""));
+		int sid = AppPreference.getUserPersistentInt(this, AppPreference.USER_ID);
+		needLogin = (sid == 0);
 		
 		//登录次数判断，用于是否显示导航页
 		SharedPreferences timePreferences = StartActivity.this.getSharedPreferences(LOGIN_TIMES, Context.MODE_PRIVATE);
@@ -104,7 +104,7 @@ public class StartActivity extends Activity implements Runnable{
 					if (needLogin) {
 						intent = new Intent(StartActivity.this, LoginIndex.class);
 					} else {// 跳首页
-						intent = new Intent(StartActivity.this, LoginIndex.class);
+						intent = new Intent(StartActivity.this, IndexHome.class);
 					}
 				}
 				StartActivity.this.startActivity(intent);

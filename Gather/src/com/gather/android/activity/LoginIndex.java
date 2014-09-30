@@ -113,7 +113,7 @@ public class LoginIndex extends BaseActivity implements OnClickListener {
 								String openid = object.getString("openid");
 								String token = object.getString("access_token");
 								String expires_in = object.getString("expires_in");
-								AppPreference.saveLoginInfo(LoginIndex.this, AppPreference.TYPE_QQ, openid, token, expires_in);
+								AppPreference.saveThirdLoginInfo(LoginIndex.this, AppPreference.TYPE_QQ, openid, token, expires_in);
 							} catch (JSONException e) {
 								e.printStackTrace();
 							}
@@ -167,7 +167,7 @@ public class LoginIndex extends BaseActivity implements OnClickListener {
 			if (Constant.SHOW_LOG) {
 				Log.e("aaaaaaaaaaa", "uid: " + mAccessToken.getUid() + "\n" + "token:" + mAccessToken.getToken() + "\n" + "expirestime: " + mAccessToken.getExpiresTime());
 			}
-			AppPreference.saveLoginInfo(LoginIndex.this, AppPreference.TYPE_SINA, mAccessToken.getUid(), mAccessToken.getToken(), String.valueOf(mAccessToken.getExpiresTime()));
+			AppPreference.saveThirdLoginInfo(LoginIndex.this, AppPreference.TYPE_SINA, mAccessToken.getUid(), mAccessToken.getToken(), String.valueOf(mAccessToken.getExpiresTime()));
 			SinaLogin();
 		}
 

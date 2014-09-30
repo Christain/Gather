@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_setting_item_click_style"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/message_item_padding_left_right"
+            android:paddingRight="@dimen/message_item_padding_left_right"
+            android:paddingTop="@dimen/message_item_padding_top_bottom" >
+
+            <ImageView
+                android:id="@+id/ivUser"
+                android:layout_width="@dimen/message_icon_size"
+                android:layout_height="@dimen/message_icon_size"
+                android:src="@drawable/icon_app_message" />
+
+            <LinearLayout
+                android:layout_width="0.0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/message_icon_text_margin"
+                android:layout_weight="1.0"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvMessageName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:singleLine="true"
+                    android:text="系统消息"
+                    android:textColor="#FF333333"
+                    android:textSize="@dimen/message_name_text_size" />
+
+                <TextView
+                    android:id="@+id/tvMessageContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="1.5dp"
+                    android:paddingRight="5dp"
+                    android:text="系统消息系统消息系统消息系统消息系统消息系统消息系统消息系统消息"
+                    android:textColor="@color/login_text"
+                    android:textSize="@dimen/message_content_text_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/tvType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/font_red"
+                        android:paddingBottom="4dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="4dp"
+                        android:text="系统消息"
+                        android:textColor="@color/font_white"
+                        android:textSize="@dimen/message_type_text_size" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1.0" />
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:text="2012-1-334"
+                        android:textColor="#CCCCCC"
+                        android:textSize="@dimen/message_content_text_size"
+                        android:typeface="serif" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.0px"
+            android:layout_marginTop="@dimen/message_item_padding_top_bottom"
+            android:background="#FFC0C0C0" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -12,9 +12,9 @@
 		android:layout_width="fill_parent"
 		android:layout_height="45dp"
 		android:gravity="center"
-		android:textSize="18sp"
+		android:textSize="16sp"
 		android:textStyle="normal"
-		android:textColor="@color/font_blue"
+		android:textColor="@color/login_text"
 		android:background="@drawable/shape_alert_dialog_cancel_style" />
 	
 </LinearLayout>

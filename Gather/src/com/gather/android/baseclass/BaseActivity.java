@@ -14,11 +14,15 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.Response.ErrorListener;
 import com.gather.android.activity.LoginIndex;
 import com.gather.android.dialog.DialogTipsBuilder;
 import com.gather.android.dialog.Effectstype;
+import com.gather.android.http.HttpStringPost;
 import com.gather.android.http.RequestManager;
+import com.gather.android.http.ResponseListener;
 import com.gather.android.manage.AppManage;
+import com.gather.android.params.ExitParam;
 import com.gather.android.preference.AppPreference;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -54,6 +58,7 @@ public abstract class BaseActivity extends ActionBarActivity {
 		dialog.withDuration(400).withEffect(Effectstype.Fall).setMessage(msg).isCancelableOnTouchOutside(false).setOnClick(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
+				Exit();
 				AppPreference.clearInfo(context);
 				Intent intent = new Intent(context, LoginIndex.class);
 				startActivity(intent);
@@ -70,6 +75,35 @@ public abstract class BaseActivity extends ActionBarActivity {
 			}
 		});
 		dialog.show();
+	}
+	
+	/**
+	 * 退出登录
+	 */
+	protected void Exit(){
+		ExitParam param = new ExitParam(context);
+		HttpStringPost task = new HttpStringPost(context, param.getUrl(), new ResponseListener() {
+			@Override
+			public void success(int code, String msg, String result) {
+				
+			}
+			
+			@Override
+			public void relogin(String msg) {
+				
+			}
+			
+			@Override
+			public void error(int code, String msg) {
+				
+			}
+		}, new ErrorListener() {
+			@Override
+			public void onErrorResponse(VolleyError error) {
+				
+			}
+		}, param.getParameters());
+		executeRequest(task);
 	}
 
 	@Override

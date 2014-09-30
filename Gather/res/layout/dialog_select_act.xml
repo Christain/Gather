@@ -58,14 +58,6 @@
                         android:text="请选择时间"
                         android:textColor="@color/login_text"
                         android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical|left"
-                        android:text=" (默认排序)"
-                        android:textColor="@color/login_text"
-                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -74,6 +66,35 @@
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/shape_dialog_select_act_widget"
                     android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:id="@+id/rlDefault"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@drawable/shape_dialog_select_act_item" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="默认排序"
+                            android:textColor="@color/login_text"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/ivArrowDefault"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/icon_arrow_black_right" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.0px"
+                        android:background="#FFC0C0C0" />
 
                     <RelativeLayout
                         android:id="@+id/rlOne"

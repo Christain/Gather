@@ -75,7 +75,7 @@ public class HomeActAdapter extends SuperAdapter {
 		});
 		this.idList = new ArrayList<Integer>(2);
 		this.context = context;
-		this.options = new DisplayImageOptions.Builder().showImageOnLoading(R.drawable.default_image).showImageForEmptyUri(R.drawable.default_image).showImageOnFail(R.drawable.default_image).cacheInMemory(true).cacheOnDisk(true).considerExifParams(true).imageScaleType(ImageScaleType.EXACTLY).displayer(new FadeInBitmapDisplayer(100)).bitmapConfig(Bitmap.Config.RGB_565).build();
+		this.options = new DisplayImageOptions.Builder().showImageOnLoading(R.drawable.default_image).showImageForEmptyUri(R.drawable.default_image).showImageOnFail(R.drawable.default_image).cacheInMemory(true).cacheOnDisk(true).considerExifParams(true).imageScaleType(ImageScaleType.EXACTLY).resetViewBeforeLoading(false).displayer(new FadeInBitmapDisplayer(400)).bitmapConfig(Bitmap.Config.RGB_565).build();
 		this.initListener();
 	}
 
@@ -87,7 +87,7 @@ public class HomeActAdapter extends SuperAdapter {
 					JSONObject object = null;
 					try {
 						object = new JSONObject(result);
-						totalNum = object.getInt("total_num");
+						totalNum = object.getInt("totalNum");
 						if (totalNum % limit == 0) {
 							maxPage = totalNum / limit;
 						} else {
@@ -95,6 +95,9 @@ public class HomeActAdapter extends SuperAdapter {
 						}
 					} catch (JSONException e) {
 						e.printStackTrace();
+						refreshOver(-1, "数据解析出错");
+						isRequest = false;
+						return;
 					} finally {
 						object = null;
 					}
@@ -322,9 +325,6 @@ public class HomeActAdapter extends SuperAdapter {
 				isRequest = true;
 				switch (model.getIs_loved()) {
 				case -1:
-					isRequest = false;
-					dialog.setMessage("不能再添加").withEffect(Effectstype.SlideBottom).show();
-					break;
 				case 0:
 					AddInterestAct(model);
 					break;
@@ -370,8 +370,10 @@ public class HomeActAdapter extends SuperAdapter {
 					isRequest = false;
 					mLoadingDialog.dismiss();
 				}
+				if (model.getIs_loved() != -1) {
+					model.setLoved_num(model.getLoved_num() + 1);
+				}
 				model.setIs_loved(1);
-				model.setLoved_num(model.getLoved_num() + 1);
 				notifyDataSetChanged();
 			}
 
@@ -423,8 +425,8 @@ public class HomeActAdapter extends SuperAdapter {
 					isRequest = false;
 					mLoadingDialog.dismiss();
 				}
-				model.setIs_loved(-1);
-				model.setLoved_num(model.getLoved_num() - 1);
+				model.setIs_loved(0);
+				model.setLoved_num(model.getLoved_num());
 				notifyDataSetChanged();
 			}
 
@@ -496,30 +498,24 @@ public class HomeActAdapter extends SuperAdapter {
 	 * 随机给标签颜色
 	 */
 	private void setInterestColor(TextView textView, int id) {
-		switch (id % 8) {
+		switch (id % 6) {
 		case 0:
-			textView.setBackgroundColor(0xFFF5C22F);
+			textView.setBackgroundColor(0xFF86EFE8);
 			break;
 		case 1:
-			textView.setBackgroundColor(0xFFE69433);
+			textView.setBackgroundColor(0xFF83DFEE);
 			break;
 		case 2:
-			textView.setBackgroundColor(0xFFDC3932);
+			textView.setBackgroundColor(0xFFA281B5);
 			break;
 		case 3:
-			textView.setBackgroundColor(0xFF5997B5);
+			textView.setBackgroundColor(0xFFBCEB89);
 			break;
 		case 4:
-			textView.setBackgroundColor(0xFF88B764);
+			textView.setBackgroundColor(0xFFE5E591);
 			break;
 		case 5:
-			textView.setBackgroundColor(0xFFF59574);
-			break;
-		case 6:
-			textView.setBackgroundColor(0xFFAD7895);
-			break;
-		case 7:
-			textView.setBackgroundColor(0xFF8DABBA);
+			textView.setBackgroundColor(0xFFFFCBBF);
 			break;
 		}
 	}
@@ -540,7 +536,7 @@ public class HomeActAdapter extends SuperAdapter {
 				HttpGetUtil param = new HttpGetUtil(context, "act/actInfo/sltActs");
 				if (idList != null && idList.size() != 0) {
 					for (int i = 0; i < idList.size(); i++) {
-						param.setParam("tagIds", idList.get(i));
+						param.setParam("tagIds[]", idList.get(i));
 					}
 				}
 				if (TimeType != 0) {
@@ -564,7 +560,7 @@ public class HomeActAdapter extends SuperAdapter {
 			HttpGetUtil param = new HttpGetUtil(context, "act/actInfo/sltActs");
 			if (idList != null && idList.size() != 0) {
 				for (int i = 0; i < idList.size(); i++) {
-					param.setParam("tagIds", idList.get(i));
+					param.setParam("tagIds[]", idList.get(i));
 				}
 			}
 			if (TimeType != 0) {

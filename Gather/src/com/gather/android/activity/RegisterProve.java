@@ -200,12 +200,9 @@ public class RegisterProve extends SwipeBackActivity implements OnClickListener 
 								String openid = object.getString("openid");
 								String token = object.getString("access_token");
 								String expires_in = object.getString("expires_in");
-								AppPreference.saveLoginInfo(RegisterProve.this, AppPreference.TYPE_QQ, openid, token, expires_in);
+								AppPreference.saveThirdLoginInfo(RegisterProve.this, AppPreference.TYPE_QQ, openid, token, expires_in);
 							} catch (JSONException e) {
 								e.printStackTrace();
-							}
-							if (Constant.SHOW_LOG) {
-								Log.e("aaaaaaaaaaaa", arg0.toString());
 							}
 							TencentLogin();
 						}
@@ -387,7 +384,7 @@ public class RegisterProve extends SwipeBackActivity implements OnClickListener 
 			if (Constant.SHOW_LOG) {
 				Log.e("aaaaaaaaaaa", "uid: " + mAccessToken.getUid() + "\n" + "token:" + mAccessToken.getToken() + "\n" + "expirestime: " + mAccessToken.getExpiresTime());
 			}
-			AppPreference.saveLoginInfo(RegisterProve.this, AppPreference.TYPE_SINA, mAccessToken.getUid(), mAccessToken.getToken(), String.valueOf(mAccessToken.getExpiresTime()));
+			AppPreference.saveThirdLoginInfo(RegisterProve.this, AppPreference.TYPE_SINA, mAccessToken.getUid(), mAccessToken.getToken(), String.valueOf(mAccessToken.getExpiresTime()));
 			SinaLogin();
 		}
 

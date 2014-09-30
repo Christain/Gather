@@ -20,13 +20,14 @@ import org.json.JSONObject;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
+import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.examples.toolbox.updated.FLog;
 import com.android.volley.toolbox.HttpHeaderParser;
@@ -199,7 +200,8 @@ public class MultipartRequest extends Request<String> {
 			if (isSuccess) {
 				Log.i("Request", sb.toString());
 			} else {
-//				Toast.makeText(context, sb.toString(), Toast.LENGTH_SHORT).show();
+				// Toast.makeText(context, sb.toString(),
+				// Toast.LENGTH_SHORT).show();
 				Log.e("Request", sb.toString());
 			}
 			sb = null;

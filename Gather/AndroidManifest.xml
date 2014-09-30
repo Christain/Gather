@@ -88,6 +88,62 @@
             android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
+            android:name=".activity.InterestActList"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarStyle" >
+        </activity>
+        <activity
+            android:name=".activity.RecommendAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarStyle"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name=".activity.Setting"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarStyle" >
+        </activity>
+        <activity
+            android:name=".activity.Message"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarStyle" >
+        </activity>
+        <activity
+            android:name=".activity.SignIn"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarStyle" >
+        </activity>
+        <activity
+            android:name=".activity.UserInfo"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarStyleHasDate" >
+        </activity>
+        <activity
+            android:name=".activity.EditData"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActionBarStyle" >
+        </activity>
+        <activity
+            android:name=".activity.QRCodeScan"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" >
+        </activity>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v4.2" >
+                </action>
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="3N6hoVQrh9qVBjBSwIZbpNRb" />
+
+        <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
             android:noHistory="true" >
@@ -111,5 +167,15 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
 </manifest>

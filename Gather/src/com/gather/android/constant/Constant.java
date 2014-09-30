@@ -7,6 +7,7 @@ import com.gather.android.manage.PhoneManage;
 public final class Constant {
 	
 	public static final String DEFOULT_REQUEST_URL = "http://192.168.0.155:9999/gathersrv/index.php?r=";// 外网数据访问地址	
+//	public static final String DEFOULT_REQUEST_URL = "http://touch.zero2all.cn:9999/gathersrv/index.php?r=";// 外网数据访问地址	
 	public static final String DEFOULT_PIC_URL = "http://serverimage.yo-yo.so"; //外网图片	
 	public static final boolean SHOW_LOG = true;// 显示log信息
 	

@@ -28,6 +28,7 @@ import com.gather.android.dialog.LoadingDialog.OnDismissListener;
 import com.gather.android.http.HttpStringPost;
 import com.gather.android.http.ResponseListener;
 import com.gather.android.params.LoginPhoneParam;
+import com.gather.android.preference.AppPreference;
 import com.gather.android.utils.MobileUtil;
 import com.gather.android.widget.swipeback.SwipeBackActivity;
 
@@ -149,6 +150,7 @@ public class LoginPhone extends SwipeBackActivity implements OnClickListener {
 				if (mLoadingDialog != null && mLoadingDialog.isShowing()) {
 					mLoadingDialog.dismiss();
 				}
+				AppPreference.savePhoneLoginInfo(LoginPhone.this, etPhone.getText().toString().trim().replace(" ", ""));
 				try {
 					JSONObject object = new JSONObject(result);
 					if (object.has("is_regist") && object.getInt("is_regist") == 0) {

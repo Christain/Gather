@@ -1,5 +1,9 @@
 package com.gather.android.preference;
 
+import com.gather.android.model.UserInfoModel;
+
+import android.R.integer;
+import android.R.menu;
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -19,6 +23,9 @@ public class AppPreference {
 	public static final String USER_EMAIL = "USER_EMAIL";				//邮箱
 	public static final String USER_BIRTHDAY = "USER_BIRTHDAY";			//生日
 	public static final String ADDRESS = "ADDRESS";						//地址
+	public static final String IS_REGISTER = "IS_REGISTER";				//是否完善资料
+	public static final String CONTACT_PHONE = "CONTACT_PHONE";			//联系电话
+	public static final String CONTACT_QQ = "CONTACT_QQ";				//联系QQ
 	public static final String LOGIN_TYPE = "LOGIN_TYPE";				//登录方式
 	public static final String SINA_ID = "SINA_ID";						//新浪openid
 	public static final String SINA_TOKEN = "SINA_TOKEN";				//新浪access_token
@@ -26,6 +33,7 @@ public class AppPreference {
 	public static final String QQ_ID = "QQ_ID";							//腾讯openid
 	public static final String QQ_TOKEN = "QQ_TOKEN";					//腾讯access_token
 	public static final String QQ_EXPIRES = "QQ_EXPIRES";				//腾讯expires_in过期时间
+	public static final String LAST_LOGIN_TIME = "LAST_LOGIN_TIME";		//最后登录时间
 	
 	
 	/*******************登录平台TYPE**************************/
@@ -80,23 +88,64 @@ public class AppPreference {
 	}
 	
 	/**
-	 * 更新登录TYPE, openid, access_token
+	 * 更新第三方登录TYPE, openid, access_token
 	 */
 
-	public static void saveLoginInfo(Context context, int login_type, String open_id, String access_token, String expires_in) {
+	public static void saveThirdLoginInfo(Context context, int login_type, String open_id, String access_token, String expires_in) {
 		getInstance(context);
 		SharedPreferences.Editor mEditor = preferences.edit();
 		if (login_type == TYPE_QQ) {
-			mEditor.putString(LOGIN_TYPE, "QQ");
+			mEditor.putInt(LOGIN_TYPE, TYPE_QQ);
 			mEditor.putString(QQ_ID, open_id);
 			mEditor.putString(QQ_TOKEN, access_token);
 			mEditor.putString(QQ_EXPIRES, expires_in);
 		} else if (login_type == TYPE_SINA) {
-			mEditor.putString(LOGIN_TYPE, "SINA");
+			mEditor.putInt(LOGIN_TYPE, TYPE_SINA);
 			mEditor.putString(SINA_ID, open_id);
 			mEditor.putString(SINA_TOKEN, access_token);
 			mEditor.putString(SINA_EXPIRES, expires_in);
 		}
+		mEditor.commit();
+	}
+	
+	/**
+	 * 更新手机号登录信息
+	 */
+	public static void savePhoneLoginInfo(Context context, String phoneNum) {
+		getInstance(context);
+		SharedPreferences.Editor mEditor = preferences.edit();
+		mEditor.putInt(LOGIN_TYPE, TYPE_SELF);
+		mEditor.putString(TELPHONE, phoneNum);
+		mEditor.commit();
+	}
+	
+	/**
+	 * 保存个人信息
+	 * @param context
+	 * @param model
+	 */
+	public static void saveUserInfo(Context context, UserInfoModel model){
+		getInstance(context);
+		SharedPreferences.Editor mEditor = preferences.edit();
+		mEditor.putInt(USER_ID, model.getUid());
+		mEditor.putInt(USER_SEX, model.getSex());
+		mEditor.putString(USER_BIRTHDAY, model.getBirth());
+		mEditor.putString(NICK_NAME, model.getNick_name());
+		mEditor.putString(REAL_NAME, model.getReal_name());
+		mEditor.putString(USER_PHOTO, model.getHead_img_url());
+		mEditor.putString(TELPHONE, model.getPho_num());
+		mEditor.putString(USER_EMAIL, model.getEmail());
+		mEditor.putString(ADDRESS, model.getAddress());
+		mEditor.putInt(IS_REGISTER, model.getIs_regist());
+		mEditor.putString(CONTACT_PHONE, model.getContact_phone());
+		mEditor.putString(SINA_EXPIRES, model.getSina_expires_in());
+		mEditor.putString(SINA_TOKEN, model.getSina_token());
+		mEditor.putString(SINA_ID, model.getSina_openid());
+		mEditor.putString(QQ_EXPIRES, model.getQq_expires_in());
+		mEditor.putString(QQ_TOKEN, model.getQq_token());
+		mEditor.putString(QQ_ID, model.getQq_openid());
+		mEditor.putString(CONTACT_QQ, model.getContact_qq());
+		mEditor.putString(LAST_LOGIN_TIME, model.getLast_login_time());
 		mEditor.commit();
 	}
 	

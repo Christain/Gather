@@ -75,5 +75,71 @@
     <!-- 活动筛选兴趣标签的间隔 -->
     <dimen name="divider_act_size">15px</dimen>
     <dimen name="divider_register_size">20px</dimen>
+    
+	<!-- 菜单栏 -->
+	<dimen name="menu_user_icon_size">65dp</dimen>
+	<dimen name="menu_margin_top">50dp</dimen>
+	<dimen name="menu_margin_left">30dp</dimen>
+	<dimen name="menu_user_name_text_size">16sp</dimen>
+	<dimen name="menu_user_sign_text_size">13sp</dimen>
+	<dimen name="menu_user_sex_icon_size">15dp</dimen>
+	<dimen name="menu_item_margin_top">30dp</dimen>
+	<dimen name="menu_item_margin_right">30dp</dimen>
+	<dimen name="menu_item_margin_left">25dp</dimen>
+	<dimen name="menu_item_icon_size">25dp</dimen>
+	<dimen name="menu_item_icon_margin_left">5dp</dimen><!--!!!!!!!-->
+	<dimen name="menu_item_minHigh">55dp</dimen>
+	<dimen name="menu_item_icon_text_margin">15dp</dimen>
+	<dimen name="menu_item_text_size">16sp</dimen>
+	<dimen name="menu_new_version_text_size">14sp</dimen>
+	<dimen name="menu_new_version_icon_width">38dp</dimen>
+	<dimen name="menu_new_version_icon_high">16dp</dimen>
+	<dimen name="menu_view_high">35dp</dimen>
+    
+    <!-- 推荐活动 -->
+	<dimen name="recommend_pic_margin_top">30dp</dimen>
+	<dimen name="recommend_item_high">48dp</dimen>
+	<dimen name="recommend_item_margin_left_right">15dp</dimen>
+	<dimen name="recommend_add_pic_icon_size">70dp</dimen>
+	<dimen name="recommend_tip_width">90dp</dimen>
+	<dimen name="recommend_edit_padding_left">100dp</dimen><!-- recommend_tip_width +  -->
+	<dimen name="recommend_tip_text_size">15sp</dimen>
+	
+	<!-- 设置 -->
+	<dimen name="setting_margin_left_right">15dp</dimen>
+	<dimen name="setting_item_high">45dp</dimen>
+	<dimen name="setting_item_text_size">16sp</dimen>
+	
+	<!-- 通知消息列表 -->
+	<dimen name="message_item_padding_left_right">7dp</dimen>
+	<dimen name="message_item_padding_top_bottom">7dp</dimen>
+	<dimen name="message_icon_text_margin">12dp</dimen>
+	<dimen name="message_icon_size">40dp</dimen>
+	<dimen name="message_name_text_size">15sp</dimen>
+	<dimen name="message_content_text_size">13sp</dimen>
+	<dimen name="message_type_text_size">12sp</dimen>
+	
+	<!-- 签到列表 -->
+	<dimen name="signin_item_margin_left_right">15dp</dimen>
+	<dimen name="signin_item_margin_top">10dp</dimen>
+	<dimen name="signin_item_title_text_size">16sp</dimen>
+	<dimen name="signin_item_title_high">40dp</dimen>
+	<dimen name="signin_item_title_margin_left">10dp</dimen>
+	<dimen name="signin_item_content_padding">15dp</dimen>
+	<dimen name="signin_item_icon_size">18dp</dimen>
+	<dimen name="signin_item_content_text_size">14sp</dimen>
+	<dimen name="signin_item_mark_icon_size">55dp</dimen>
+	<dimen name="signin_item_mark_text_size">14sp</dimen>
+	
+	<!-- 个人信息 -->
+	<dimen name="user_info_user_icon_item_high">65dp</dimen>
+	<dimen name="user_info_item_high">55dp</dimen>
+	<dimen name="user_info_item_padding_left_right">15dp</dimen>
+	<dimen name="user_info_item_text_size">15sp</dimen>
+	<dimen name="user_info_item_arrow_size">15dp</dimen>
+	<dimen name="user_info_item_user_icon_size">48dp</dimen>
+	<dimen name="user_info_divider">35dp</dimen>
+	<dimen name="user_info_divider_text_size">13sp</dimen>
+	<dimen name="user_info_tip_width">100dp</dimen>
 
 </resources>
